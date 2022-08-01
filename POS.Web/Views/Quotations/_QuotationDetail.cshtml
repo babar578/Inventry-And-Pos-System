@@ -9,7 +9,7 @@
     int Count = 0;
     if (items?.Count > 0)
     {
-        maxAmount= (double)items.Select(i => i.SubTotal).Sum();
+        maxAmount= (double)items.Select(i => i.QSubTotal).Sum();
         GrossAmount = Math.Round(maxAmount, 2);
         Count = items.Count();
     }

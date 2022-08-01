@@ -110,6 +110,7 @@
     <Compile Include="ViewModel\CartItemViewModel.cs" />
     <Compile Include="ViewModel\CartViewModel.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\CompanyViewModel.cs" />
     <Compile Include="ViewModel\CityViewModel.cs" />
     <Compile Include="ViewModel\ClosingInventoryDetailViewModel.cs" />
     <Compile Include="ViewModel\ClosingInventoryHeadViewModel.cs" />

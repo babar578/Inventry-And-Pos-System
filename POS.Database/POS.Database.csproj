@@ -65,6 +65,9 @@
     <Compile Include="DatabaseModel\ClosingInventoryHead.cs">
       <DependentUpon>POSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseModel\Company.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseModel\Comsumption_Result.cs">
       <DependentUpon>POSModel.tt</DependentUpon>
     </Compile>

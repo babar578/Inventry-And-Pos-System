@@ -2055,5 +2055,52 @@ namespace POS.Utilities.Services
         //    return returnValue;
         //}
         #endregion
+
+        #region Company Functions
+        public static bool AddComapny(CompanyViewModel model)
+        {
+            bool returnValue = false;
+            try
+            {
+                using (POSEntities context = new POSEntities())
+                {
+                    Company entity = (Company)model;
+                    context.Companies.Add(entity);
+                    context.SaveChanges();
+                    returnValue = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return returnValue;
+        }
+        public static  CompanyViewModel GetCompanyById()
+        {
+            CompanyViewModel returnValue = null;
+            try
+            {
+                using (POSEntities context = new POSEntities())
+                {
+                    string SQL = $"select * from Company ";
+                    returnValue = context.Database.SqlQuery<Company>(SQL).FirstOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return returnValue;
+        }
+    
+
+     
+
+    
+      
+        #endregion
+
+
     }
 }

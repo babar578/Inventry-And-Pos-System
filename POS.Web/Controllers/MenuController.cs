@@ -696,5 +696,78 @@ namespace POS.Web.Controllers
         }
 
         #endregion
+
+
+        #region Unit
+
+        public ActionResult Companys()
+        {
+            var user = Session[WebUtil.CURRENT_USER] as UserViewModel;
+            if (user == null)
+                return RedirectToAction("Login", new { Controller = "Account" });
+
+            var Companys = ItemServices.GetCompanyById();
+            return View("Companys", Companys);
+        }
+
+        [HttpGet]
+        public ActionResult Company(int? id)
+        {
+            var user = Session[WebUtil.CURRENT_USER] as UserViewModel;
+            if (user == null)
+                return RedirectToAction("Login", new { Controller = "Account" });
+
+            CompanyViewModel model = new CompanyViewModel();
+
+            if (id != null)
+            {
+                model = ItemServices.GetCompanyById();
+            }
+
+            return View("_Company", model);
+        }
+
+        [HttpPost]
+        public JsonResult AddCompany(CompanyViewModel model)
+        {
+            string message = string.Empty;
+            try
+            {
+
+
+                bool add;
+                if (model.Id == 0)
+                {
+                    model.CreationDate = DateTime.Now;
+                    model.IsActive = true;
+                    add = ItemServices.AddComapny(model);
+                }
+                else
+                {
+                    //add = ItemServices.UpdateUnit(model);
+                }
+
+                if (1==1)
+                {
+                    message = "Success";
+
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+            }
+
+            return Json(message);
+        }
+
+        
+
+
+        #endregion
     }
 }

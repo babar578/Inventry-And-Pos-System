@@ -6724,6 +6724,8 @@
     <Content Include="Views\Quotations\_GetQuotationVoucherSummary.cshtml" />
     <Content Include="Views\Quotations\_QuotationDetail.cshtml" />
     <Content Include="Views\Quotations\_QuotationHead.cshtml" />
+    <Content Include="Views\Menu\Companys.cshtml" />
+    <Content Include="Views\Menu\_Company.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

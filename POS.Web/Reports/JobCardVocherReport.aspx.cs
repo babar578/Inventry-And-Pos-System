@@ -28,8 +28,20 @@ namespace POS.Web.Reports
                 List<JobCardViewModelReport> list = VendorServices.GetReportjobcardById(ItemId).ToList();
            
                 ReportDataSource dataSource = new ReportDataSource("DataSet1", list);
-               // ReportParameter[] rpt = new ReportParameter[1];
-              //  ReportViewer1.LocalReport.SetParameters(rpt);
+                var company = ItemServices.GetCompanyById();
+                string imagePath = new Uri(Server.MapPath(company.LOGO)).AbsoluteUri;
+                ReportParameter parameter = new ReportParameter("ImagePath", imagePath);
+
+              
+                ReportParameter parameter1 = new ReportParameter("CompanyName", company.CompanyName);
+
+                ReportParameter parameter3 = new ReportParameter("Address", company.Address);
+
+                ReportParameter parameter4 = new ReportParameter("Address", company.PhoneNumber1);
+                ReportViewer1.LocalReport.SetParameters(parameter1);
+                ReportViewer1.LocalReport.SetParameters(parameter);
+                // ReportParameter[] rpt = new ReportParameter[1];
+                //  ReportViewer1.LocalReport.SetParameters(rpt);
                 ReportViewer1.LocalReport.DataSources.Clear();
                 ReportViewer1.LocalReport.DataSources.Add(dataSource);
             }

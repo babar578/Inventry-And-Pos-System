@@ -79,6 +79,7 @@ namespace POS.Database.DatabaseModel
         public virtual DbSet<WastageHead> WastageHeads { get; set; }
         public virtual DbSet<QuotationDetail> QuotationDetails { get; set; }
         public virtual DbSet<QuotationHead> QuotationHeads { get; set; }
+        public virtual DbSet<Company> Companies { get; set; }
     
         [DbFunction("POSEntities", "fn_InventoryBal")]
         public virtual IQueryable<fn_InventoryBal_Result> fn_InventoryBal(Nullable<System.DateTime> dateFrom, Nullable<System.DateTime> dateTo)

@@ -47,6 +47,21 @@ namespace POS.Utilities.ViewModel
         {
             get
             {
+                if (Quantity > 0 && PPrice > 0)
+                {
+                    return (Quantity * PPrice);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+
+        public double QSubTotal
+        {
+            get
+            {
                 if (Quantity > 0 && Price > 0)
                 {
                     return (Quantity * Price);

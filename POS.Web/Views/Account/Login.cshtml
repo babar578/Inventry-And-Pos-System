@@ -1,8 +1,14 @@
 ﻿@using POS.Utilities.ViewModel
 @model UserViewModel
+@using POS.Utilities.Services
+@using POS.Utilities.Utilities
+
 @{
     ViewBag.Title = "Login";
     Layout = null;
+
+    var sdfg = ItemServices.GetCompanyById();
+     
 }
 
 <!DOCTYPE html>
@@ -12,7 +18,7 @@
 <head>
     <base href="../../../../">
     <meta charset="utf-8" />
-    <title>شہزاد آئل سٹور</title>
+    <title>@sdfg.CompanyNameUrdu</title>
     <meta name="description" content="Login page example" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--begin::Fonts-->
@@ -70,7 +76,7 @@
                     <!--begin::Login Sign in form-->
                     <div class="login-signin">
                         <div class="mb-20">
-                            <h1>شہزاد آئل سٹور</h1>
+                            <h1>@sdfg.CompanyNameUrdu</h1>
                             <p class="opacity-60 font-weight-bold">Enter your details to login to your account:</p>
                         </div>
 

@@ -93,6 +93,7 @@
         <EntityTypeShape EntityType="POSModel.QuotationHead" Width="1.5" PointX="20.25" PointY="0.75" />
         <AssociationConnector Association="POSModel.FK_QuotationHead_Vendors" />
         <AssociationConnector Association="POSModel.FK_QuotationsHead_Vendors" />
+        <EntityTypeShape EntityType="POSModel.Company" Width="1.5" PointX="25.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
